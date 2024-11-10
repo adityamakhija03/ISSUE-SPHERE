@@ -1,6 +1,6 @@
 # Issue Sphere - Intelligent Diagnostic Cluster Finder
 
-![Issue Sphere Logo](./issue%20sphere.jpg)
+![Issue Sphere Logo](./issue%10sphere.jpg)
 
 Issue Sphere is an intelligent system that uses vector search and AI to find relevant diagnostic clusters for vehicle-related issues. It combines MongoDB's vector search capabilities with Google's Gemini AI to provide accurate and contextual recommendations, featuring Sentence Transformers for embedding generation.
 
