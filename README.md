@@ -83,24 +83,6 @@ streamlit run appp.py
 - "Battery not holding charge after overnight parking"
 - "Transmission slipping during gear changes"
 
-## 🔄 MongoDB Vector Search Setup
-
-The application requires a vector search index in MongoDB with the following configuration:
-
-```javascript
-{
-  "mappings": {
-    "dynamic": true,
-    "fields": {
-      "embedding": {
-        "dimensions": 384,
-        "similarity": "cosine",
-        "type": "knnVector"
-      }
-    }
-  }
-}
-```
 
 ## 📊 Performance Features
 
