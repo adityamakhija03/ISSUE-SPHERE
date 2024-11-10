@@ -3,5 +3,5 @@ __pycache__/
 .env
 .streamlit/
 venv/
-# config.toml
-# 50_claim.csv
+config.toml
+50_claim.csv
