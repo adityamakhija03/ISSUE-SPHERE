@@ -1,0 +1,7 @@
+streamlit
+pymongo
+sentence-transformers
+google-generativeai
+python-dotenv
+einops
+toml
