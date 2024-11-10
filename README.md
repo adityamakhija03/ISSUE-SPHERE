@@ -1,6 +1,6 @@
 # Issue Sphere - Intelligent Diagnostic Cluster Finder
 
-![Issue Sphere Logo](./issue%10sphere.jpg)
+![Issue Sphere Logo](./issue%20sphere.jpg)
 
 Issue Sphere is an intelligent system that uses vector search and AI to find relevant diagnostic clusters for vehicle-related issues. It combines MongoDB's vector search capabilities with Google's Gemini AI to provide accurate and contextual recommendations, featuring Sentence Transformers for embedding generation.
 
@@ -34,8 +34,7 @@ Issue Sphere is an intelligent system that uses vector search and AI to find rel
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/adm003/Issue__Sphere.git
-cd issue-sphere
+git clone https://github.com/adityamakhija03/ISSUE-SPHERE.git
 ```
 
 2. Install required packages:
@@ -62,12 +61,11 @@ gemini_model = "gemini-model-name"
 title = "Cluster Finder for issues"
 image_path = "./issue sphere.jpg"
 image_width = 150
-file_path = "path/to/claims/data.csv"
 ```
 
 4. Run the application:
 ```bash
-streamlit run app.py
+streamlit run appp.py
 ```
 
 ## 🚀 Usage
@@ -129,7 +127,7 @@ The application requires a vector search index in MongoDB with the following con
 
 ## 👥 Authors
 
-- Aditya Makhija (@adm003)
+- Aditya Makhija (@adityamakhija03)
 
 ## 📞 Support
 

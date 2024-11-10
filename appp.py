@@ -150,7 +150,8 @@ def main():
 
                         Which cluster would you recommend, and why?
                         """
-                        with st.expander("AI Recommendation", expanded=True):
+                        with st.expander("**Recommendations**", expanded=True):
+                            st.subheader("Gemini Recommendation")
                             response = gemini_model.generate_content(gemini_prompt)
                             st.write(response.text)
 
