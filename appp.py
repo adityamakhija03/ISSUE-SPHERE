@@ -27,7 +27,7 @@ def initialize_models(config):
     try:
         model = SentenceTransformer(config["model"]["sentence_transformer"], trust_remote_code=True)
         # Get API key from Streamlit secrets
-        genai.configure(api_key=st.secrets["google_api_key"])
+        genai.configure(api_key=st.secrets['google_api_key'])
         return model, genai.GenerativeModel(config["model"]["gemini_model"])
     except Exception as e:
         st.error(f"Failed to initialize models: {str(e)}")
@@ -38,7 +38,7 @@ def initialize_models(config):
 def initialize_mongodb(config):
     try:
         # Get MongoDB URI from Streamlit secrets
-        mongo_uri = st.secrets["mongodb_uri"]
+        mongo_uri = st.secrets['mongodb_uri']
         client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
         # Test connection
         client.server_info()
