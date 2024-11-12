@@ -1,15 +1,10 @@
 import os
 import pandas as pd
-from dotenv import load_dotenv
 import streamlit as st
 from pymongo import MongoClient
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 import toml
-from config import MONGODB_URI, GOOGLE_API_KEY
-mongo_uri = MONGODB_URI
-google_api_key = GOOGLE_API_KEY
-
 
 # Configure page
 st.set_page_config(
@@ -31,7 +26,8 @@ def load_config():
 def initialize_models(config):
     try:
         model = SentenceTransformer(config["model"]["sentence_transformer"], trust_remote_code=True)
-        genai.configure(api_key=google_api_key)
+        # Get API key from Streamlit secrets
+        genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
         return model, genai.GenerativeModel(config["model"]["gemini_model"])
     except Exception as e:
         st.error(f"Failed to initialize models: {str(e)}")
@@ -41,12 +37,16 @@ def initialize_models(config):
 @st.cache_resource
 def initialize_mongodb(config):
     try:
+        # Get MongoDB URI from Streamlit secrets
+        mongo_uri = st.secrets["MONGODB_URI"]
         client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
-        client.server_info()  # Verify connection
+        # Test connection
+        client.server_info()
         db = client[config["mongodb"]["database"]]
         return db
     except Exception as e:
-        st.error(f"Failed to connect to MongoDB: {str(e)}")
+        st.error(f"""Failed to connect to MongoDB: {str(e)}
+                 Please ensure you have set up your MongoDB Atlas connection string in Streamlit secrets.""")
         return None
 
 # Function to generate embeddings
