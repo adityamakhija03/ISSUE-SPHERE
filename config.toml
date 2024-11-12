@@ -1,0 +1,14 @@
+[mongodb]
+database = "myDatabase"
+clusters_collection = "oem_clusters"
+claims_collection = "oem_claims"
+
+[model]
+sentence_transformer = "nomic-ai/nomic-embed-text-v1"
+gemini_model = "gemini-1.5-flash"
+
+[app]
+title = "Cluster Finder for issues"
+image_path = "./issue sphere.jpg"
+image_width = 150
+file_path = "./50_claim.csv"
